@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <!-- Gear tooth pattern helper -->
+    <style>
+      .gear { fill: #E87400; }
+      .gear-hole { fill: #2A2D32; }
+      .circuit { stroke: #E87400; stroke-width: 2; fill: none; }
+      .circuit-thick { stroke: #E87400; stroke-width: 3; fill: none; }
+      .circuit-node { fill: #E87400; }
+      .bg { fill: #2A2D32; }
+      .text-main { fill: #E87400; font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; }
+      .board-line { stroke: #C06000; stroke-width: 1.5; fill: none; opacity: 0.5; }
+      .gear-dark { fill: #C06000; }
+    </style>
+
+    <!-- Clipping mask for skull shape -->
+    <clipPath id="skullClip">
+      <path d="M400,80
+               C520,80 620,130 680,210
+               C740,290 760,380 750,460
+               C740,540 710,600 680,650
+               C660,680 640,710 630,740
+               L630,820
+               C630,850 620,870 600,880
+               L560,900
+               C540,908 520,900 510,880
+               L500,850
+               C490,835 480,830 470,830
+               L330,830
+               C320,830 310,835 300,850
+               L290,880
+               C280,900 260,908 240,900
+               L200,880
+               C180,870 170,850 170,820
+               L170,740
+               C160,710 140,680 120,650
+               C90,600 60,540 50,460
+               C40,380 60,290 120,210
+               C180,130 280,80 400,80 Z" />
+    </clipPath>
+
+    <!-- Gradient for 3D effect -->
+    <linearGradient id="gearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F09030"/>
+      <stop offset="50%" style="stop-color:#E87400"/>
+      <stop offset="100%" style="stop-color:#B85800"/>
+    </linearGradient>
+
+    <linearGradient id="gearGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F09030"/>
+      <stop offset="100%" style="stop-color:#C06000"/>
+    </linearGradient>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1000" class="bg"/>
+
+  <!-- Main group with shadow -->
+  <g filter="url(#shadow)">
+
+    <!-- Skull outline shape -->
+    <path d="M400,80
+             C520,80 620,130 680,210
+             C740,290 760,380 750,460
+             C740,540 710,600 680,650
+             C660,680 640,710 630,740
+             L630,820
+             C630,850 620,870 600,880
+             L560,900
+             C540,908 520,900 510,880
+             L500,850
+             C490,835 480,830 470,830
+             L330,830
+             C320,830 310,835 300,850
+             L290,880
+             C280,900 260,908 240,900
+             L200,880
+             C180,870 170,850 170,820
+             L170,740
+             C160,710 140,680 120,650
+             C90,600 60,540 50,460
+             C40,380 60,290 120,210
+             C180,130 280,80 400,80 Z"
+          fill="#E87400" stroke="#C06000" stroke-width="3"/>
+
+    <!-- Circuit board background pattern inside skull -->
+    <g clip-path="url(#skullClip)" opacity="0.3">
+      <!-- Horizontal lines -->
+      <line x1="60" y1="150" x2="740" y2="150" class="board-line"/>
+      <line x1="60" y1="200" x2="740" y2="200" class="board-line"/>
+      <line x1="60" y1="250" x2="740" y2="250" class="board-line"/>
+      <line x1="60" y1="300" x2="740" y2="300" class="board-line"/>
+      <line x1="60" y1="350" x2="740" y2="350" class="board-line"/>
+      <line x1="60" y1="450" x2="740" y2="450" class="board-line"/>
+      <line x1="60" y1="550" x2="740" y2="550" class="board-line"/>
+      <line x1="60" y1="600" x2="740" y2="600" class="board-line"/>
+      <line x1="60" y1="650" x2="740" y2="650" class="board-line"/>
+      <line x1="60" y1="700" x2="740" y2="700" class="board-line"/>
+      <line x1="60" y1="750" x2="740" y2="750" class="board-line"/>
+      <!-- Vertical lines -->
+      <line x1="150" y1="80" x2="150" y2="900" class="board-line"/>
+      <line x1="250" y1="80" x2="250" y2="900" class="board-line"/>
+      <line x1="350" y1="80" x2="350" y2="900" class="board-line"/>
+      <line x1="450" y1="80" x2="450" y2="900" class="board-line"/>
+      <line x1="550" y1="80" x2="550" y2="900" class="board-line"/>
+      <line x1="650" y1="80" x2="650" y2="900" class="board-line"/>
+      <!-- Diagonal traces -->
+      <line x1="100" y1="180" x2="200" y2="280" class="board-line"/>
+      <line x1="600" y1="180" x2="700" y2="280" class="board-line"/>
+      <line x1="200" y1="600" x2="300" y2="700" class="board-line"/>
+      <line x1="500" y1="600" x2="600" y2="700" class="board-line"/>
+      <!-- Small rectangles (chips) -->
+      <rect x="130" y="620" width="40" height="25" fill="#C06000" rx="3"/>
+      <rect x="500" y="170" width="35" height="20" fill="#C06000" rx="3"/>
+      <rect x="200" y="720" width="30" height="18" fill="#C06000" rx="3"/>
+      <rect x="550" y="680" width="35" height="20" fill="#C06000" rx="3"/>
+      <rect x="600" y="600" width="25" height="15" fill="#C06000" rx="3"/>
+      <rect x="150" y="300" width="30" height="20" fill="#C06000" rx="3"/>
+    </g>
+
+    <!-- GEARS - Upper section -->
+
+    <!-- Large gear - top center -->
+    <g transform="translate(400, 200)">
+      <path d="M0,-85 L12,-83 L15,-70 L25,-68 L32,-78 L42,-72 L38,-60 L47,-53 L56,-60 L63,-50 L53,-42 L58,-32 L68,-32 L70,-20 L60,-15 L62,-4 L72,0 L70,12 L60,10 L55,20 L63,28 L55,37 L46,30 L38,38 L43,48 L33,52 L28,42 L18,45 L18,56 L6,56 L4,45 L-6,45 L-8,56 L-20,56 L-18,45 L-28,42 L-33,52 L-43,48 L-38,38 L-46,30 L-55,37 L-63,28 L-55,20 L-60,10 L-70,12 L-72,0 L-62,-4 L-60,-15 L-70,-20 L-68,-32 L-58,-32 L-53,-42 L-63,-50 L-56,-60 L-47,-53 L-38,-60 L-42,-72 L-32,-78 L-25,-68 L-15,-70 L-12,-83 Z"
+            fill="url(#gearGrad)" stroke="#B85800" stroke-width="2"/>
+      <circle cx="0" cy="0" r="40" fill="#E87400" stroke="#B85800" stroke-width="2"/>
+      <circle cx="0" cy="0" r="25" class="gear-hole"/>
+      <!-- Inner spokes -->
+      <circle cx="0" cy="0" r="15" fill="#E87400"/>
+      <circle cx="0" cy="0" r="8" class="gear-hole"/>
+    </g>
+
+    <!-- Medium gear - upper left -->
+    <g transform="translate(260, 230)">
+      <path d="M0,-60 L10,-58 L12,-48 L20,-46 L26,-54 L34,-48 L30,-38 L37,-32 L44,-38 L48,-30 L40,-24 L43,-15 L52,-14 L52,-3 L43,-1 L43,8 L52,12 L48,22 L39,18 L33,25 L38,33 L29,37 L25,28 L16,30 L15,40 L4,40 L3,30 L-6,30 L-8,40 L-18,40 L-16,30 L-25,28 L-29,37 L-38,33 L-33,25 L-39,18 L-48,22 L-52,12 L-43,8 L-43,-1 L-52,-3 L-52,-14 L-43,-15 L-40,-24 L-48,-30 L-44,-38 L-37,-32 L-30,-38 L-34,-48 L-26,-54 L-20,-46 L-12,-48 L-10,-58 Z"
+            fill="url(#gearGrad2)" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="28" fill="#E87400" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="18" class="gear-hole"/>
+      <circle cx="0" cy="0" r="10" fill="#E87400"/>
+      <circle cx="0" cy="0" r="5" class="gear-hole"/>
+    </g>
+
+    <!-- Medium gear - upper right -->
+    <g transform="translate(540, 230)">
+      <path d="M0,-60 L10,-58 L12,-48 L20,-46 L26,-54 L34,-48 L30,-38 L37,-32 L44,-38 L48,-30 L40,-24 L43,-15 L52,-14 L52,-3 L43,-1 L43,8 L52,12 L48,22 L39,18 L33,25 L38,33 L29,37 L25,28 L16,30 L15,40 L4,40 L3,30 L-6,30 L-8,40 L-18,40 L-16,30 L-25,28 L-29,37 L-38,33 L-33,25 L-39,18 L-48,22 L-52,12 L-43,8 L-43,-1 L-52,-3 L-52,-14 L-43,-15 L-40,-24 L-48,-30 L-44,-38 L-37,-32 L-30,-38 L-34,-48 L-26,-54 L-20,-46 L-12,-48 L-10,-58 Z"
+            fill="url(#gearGrad2)" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="28" fill="#E87400" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="18" class="gear-hole"/>
+      <circle cx="0" cy="0" r="10" fill="#E87400"/>
+      <circle cx="0" cy="0" r="5" class="gear-hole"/>
+    </g>
+
+    <!-- Small gear - left eye area -->
+    <g transform="translate(300, 330)">
+      <path d="M0,-42 L8,-40 L10,-33 L16,-31 L20,-37 L26,-33 L23,-26 L28,-22 L33,-27 L36,-21 L30,-16 L32,-9 L39,-8 L39,0 L32,1 L32,8 L39,10 L36,17 L29,14 L25,19 L28,25 L22,28 L18,21 L12,23 L12,30 L4,30 L3,23 L-4,23 L-5,30 L-13,30 L-12,23 L-18,21 L-22,28 L-28,25 L-25,19 L-29,14 L-36,17 L-39,10 L-32,8 L-32,1 L-39,0 L-39,-8 L-32,-9 L-30,-16 L-36,-21 L-33,-27 L-28,-22 L-23,-26 L-26,-33 L-20,-37 L-16,-31 L-10,-33 L-8,-40 Z"
+            fill="url(#gearGrad)" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="20" fill="#E87400" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="13" class="gear-hole"/>
+      <circle cx="0" cy="0" r="7" fill="#E87400"/>
+      <circle cx="0" cy="0" r="4" class="gear-hole"/>
+    </g>
+
+    <!-- Small gear - right eye area -->
+    <g transform="translate(500, 330)">
+      <path d="M0,-42 L8,-40 L10,-33 L16,-31 L20,-37 L26,-33 L23,-26 L28,-22 L33,-27 L36,-21 L30,-16 L32,-9 L39,-8 L39,0 L32,1 L32,8 L39,10 L36,17 L29,14 L25,19 L28,25 L22,28 L18,21 L12,23 L12,30 L4,30 L3,23 L-4,23 L-5,30 L-13,30 L-12,23 L-18,21 L-22,28 L-28,25 L-25,19 L-29,14 L-36,17 L-39,10 L-32,8 L-32,1 L-39,0 L-39,-8 L-32,-9 L-30,-16 L-36,-21 L-33,-27 L-28,-22 L-23,-26 L-26,-33 L-20,-37 L-16,-31 L-10,-33 L-8,-40 Z"
+            fill="url(#gearGrad)" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="20" fill="#E87400" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="13" class="gear-hole"/>
+      <circle cx="0" cy="0" r="7" fill="#E87400"/>
+      <circle cx="0" cy="0" r="4" class="gear-hole"/>
+    </g>
+
+    <!-- Tiny gear - left -->
+    <g transform="translate(180, 280)">
+      <path d="M0,-30 L6,-28 L8,-23 L12,-22 L15,-26 L19,-23 L17,-18 L21,-15 L24,-19 L26,-15 L22,-11 L24,-6 L28,-6 L28,0 L24,1 L24,6 L28,8 L26,13 L21,11 L19,14 L21,18 L17,20 L14,15 L10,17 L10,22 L4,22 L3,17 L-3,17 L-4,22 L-10,22 L-10,17 L-14,15 L-17,20 L-21,18 L-19,14 L-21,11 L-26,13 L-28,8 L-24,6 L-24,1 L-28,0 L-28,-6 L-24,-6 L-22,-11 L-26,-15 L-24,-19 L-21,-15 L-17,-18 L-19,-23 L-15,-26 L-12,-22 L-8,-23 L-6,-28 Z"
+            fill="url(#gearGrad2)" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="14" fill="#E87400" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="8" class="gear-hole"/>
+    </g>
+
+    <!-- Tiny gear - right -->
+    <g transform="translate(620, 280)">
+      <path d="M0,-30 L6,-28 L8,-23 L12,-22 L15,-26 L19,-23 L17,-18 L21,-15 L24,-19 L26,-15 L22,-11 L24,-6 L28,-6 L28,0 L24,1 L24,6 L28,8 L26,13 L21,11 L19,14 L21,18 L17,20 L14,15 L10,17 L10,22 L4,22 L3,17 L-3,17 L-4,22 L-10,22 L-10,17 L-14,15 L-17,20 L-21,18 L-19,14 L-21,11 L-26,13 L-28,8 L-24,6 L-24,1 L-28,0 L-28,-6 L-24,-6 L-22,-11 L-26,-15 L-24,-19 L-21,-15 L-17,-18 L-19,-23 L-15,-26 L-12,-22 L-8,-23 L-6,-28 Z"
+            fill="url(#gearGrad2)" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="14" fill="#E87400" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="8" class="gear-hole"/>
+    </g>
+
+    <!-- GEARS - Lower section -->
+
+    <!-- Large gear - bottom center -->
+    <g transform="translate(400, 620)">
+      <path d="M0,-70 L10,-68 L12,-58 L20,-56 L26,-64 L34,-58 L30,-48 L37,-42 L44,-48 L48,-40 L40,-34 L43,-25 L52,-24 L52,-13 L43,-11 L43,-2 L52,2 L48,12 L39,8 L33,15 L38,23 L29,27 L25,18 L16,20 L15,30 L4,30 L3,20 L-6,20 L-8,30 L-18,30 L-16,20 L-25,18 L-29,27 L-38,23 L-33,15 L-39,8 L-48,12 L-52,2 L-43,-2 L-43,-11 L-52,-13 L-52,-24 L-43,-25 L-40,-34 L-48,-40 L-44,-48 L-37,-42 L-30,-48 L-34,-58 L-26,-64 L-20,-56 L-12,-58 L-10,-68 Z"
+            fill="url(#gearGrad)" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="32" fill="#E87400" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="20" class="gear-hole"/>
+      <circle cx="0" cy="0" r="12" fill="#E87400"/>
+      <circle cx="0" cy="0" r="6" class="gear-hole"/>
+    </g>
+
+    <!-- Medium gear - bottom left -->
+    <g transform="translate(270, 650)">
+      <path d="M0,-50 L8,-48 L10,-40 L16,-38 L20,-44 L26,-40 L23,-32 L28,-28 L33,-32 L36,-26 L30,-20 L32,-13 L39,-12 L39,-3 L32,-1 L32,6 L39,8 L36,15 L29,12 L25,17 L28,23 L22,26 L18,19 L12,21 L12,27 L4,27 L3,21 L-4,21 L-5,27 L-13,27 L-12,21 L-18,19 L-22,26 L-28,23 L-25,17 L-29,12 L-36,15 L-39,8 L-32,6 L-32,-1 L-39,-3 L-39,-12 L-32,-13 L-30,-20 L-36,-26 L-33,-32 L-28,-28 L-23,-32 L-26,-40 L-20,-44 L-16,-38 L-10,-40 L-8,-48 Z"
+            fill="url(#gearGrad2)" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="24" fill="#E87400" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="15" class="gear-hole"/>
+      <circle cx="0" cy="0" r="8" fill="#E87400"/>
+      <circle cx="0" cy="0" r="4" class="gear-hole"/>
+    </g>
+
+    <!-- Medium gear - bottom right -->
+    <g transform="translate(530, 650)">
+      <path d="M0,-50 L8,-48 L10,-40 L16,-38 L20,-44 L26,-40 L23,-32 L28,-28 L33,-32 L36,-26 L30,-20 L32,-13 L39,-12 L39,-3 L32,-1 L32,6 L39,8 L36,15 L29,12 L25,17 L28,23 L22,26 L18,19 L12,21 L12,27 L4,27 L3,21 L-4,21 L-5,27 L-13,27 L-12,21 L-18,19 L-22,26 L-28,23 L-25,17 L-29,12 L-36,15 L-39,8 L-32,6 L-32,-1 L-39,-3 L-39,-12 L-32,-13 L-30,-20 L-36,-26 L-33,-32 L-28,-28 L-23,-32 L-26,-40 L-20,-44 L-16,-38 L-10,-40 L-8,-48 Z"
+            fill="url(#gearGrad2)" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="24" fill="#E87400" stroke="#B85800" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="15" class="gear-hole"/>
+      <circle cx="0" cy="0" r="8" fill="#E87400"/>
+      <circle cx="0" cy="0" r="4" class="gear-hole"/>
+    </g>
+
+    <!-- Small gears - bottom corners -->
+    <g transform="translate(190, 600)">
+      <path d="M0,-28 L5,-26 L7,-22 L10,-21 L13,-24 L16,-21 L14,-17 L17,-14 L20,-17 L22,-13 L18,-10 L20,-5 L24,-5 L24,1 L20,2 L20,7 L24,8 L22,13 L17,11 L15,14 L17,17 L13,19 L11,14 L7,16 L7,20 L2,20 L2,16 L-3,16 L-4,20 L-9,20 L-8,16 L-12,14 L-14,19 L-18,17 L-16,14 L-18,11 L-23,13 L-25,8 L-21,7 L-21,2 L-25,1 L-25,-5 L-21,-5 L-19,-10 L-23,-13 L-21,-17 L-18,-14 L-15,-17 L-17,-21 L-14,-24 L-11,-21 L-8,-22 L-6,-26 Z"
+            fill="url(#gearGrad)" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="12" fill="#E87400" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="7" class="gear-hole"/>
+    </g>
+
+    <g transform="translate(610, 600)">
+      <path d="M0,-28 L5,-26 L7,-22 L10,-21 L13,-24 L16,-21 L14,-17 L17,-14 L20,-17 L22,-13 L18,-10 L20,-5 L24,-5 L24,1 L20,2 L20,7 L24,8 L22,13 L17,11 L15,14 L17,17 L13,19 L11,14 L7,16 L7,20 L2,20 L2,16 L-3,16 L-4,20 L-9,20 L-8,16 L-12,14 L-14,19 L-18,17 L-16,14 L-18,11 L-23,13 L-25,8 L-21,7 L-21,2 L-25,1 L-25,-5 L-21,-5 L-19,-10 L-23,-13 L-21,-17 L-18,-14 L-15,-17 L-17,-21 L-14,-24 L-11,-21 L-8,-22 L-6,-26 Z"
+            fill="url(#gearGrad)" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="12" fill="#E87400" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="7" class="gear-hole"/>
+    </g>
+
+    <!-- Tiny gears bottom -->
+    <g transform="translate(340, 720)">
+      <path d="M0,-22 L4,-21 L5,-17 L8,-16 L10,-19 L13,-17 L11,-13 L14,-11 L16,-14 L18,-10 L15,-8 L16,-4 L19,-4 L19,1 L16,1 L16,5 L19,6 L18,10 L14,8 L12,11 L14,14 L10,15 L9,11 L6,12 L6,16 L2,16 L1,12 L-2,12 L-3,16 L-7,16 L-7,12 L-10,11 L-11,15 L-15,14 L-13,11 L-15,8 L-19,10 L-20,6 L-17,5 L-17,1 L-20,1 L-20,-4 L-17,-4 L-16,-8 L-19,-10 L-17,-14 L-15,-11 L-12,-13 L-14,-17 L-11,-19 L-9,-16 L-6,-17 L-5,-21 Z"
+            fill="url(#gearGrad2)" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="10" fill="#E87400" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="6" class="gear-hole"/>
+    </g>
+
+    <g transform="translate(460, 720)">
+      <path d="M0,-22 L4,-21 L5,-17 L8,-16 L10,-19 L13,-17 L11,-13 L14,-11 L16,-14 L18,-10 L15,-8 L16,-4 L19,-4 L19,1 L16,1 L16,5 L19,6 L18,10 L14,8 L12,11 L14,14 L10,15 L9,11 L6,12 L6,16 L2,16 L1,12 L-2,12 L-3,16 L-7,16 L-7,12 L-10,11 L-11,15 L-15,14 L-13,11 L-15,8 L-19,10 L-20,6 L-17,5 L-17,1 L-20,1 L-20,-4 L-17,-4 L-16,-8 L-19,-10 L-17,-14 L-15,-11 L-12,-13 L-14,-17 L-11,-19 L-9,-16 L-6,-17 L-5,-21 Z"
+            fill="url(#gearGrad2)" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="10" fill="#E87400" stroke="#B85800" stroke-width="1"/>
+      <circle cx="0" cy="0" r="6" class="gear-hole"/>
+    </g>
+
+    <!-- CIRCUIT TRACES extending outward -->
+
+    <!-- Left side circuits -->
+    <line x1="120" y1="300" x2="30" y2="280" class="circuit-thick"/>
+    <line x1="30" y1="280" x2="30" y2="230" class="circuit-thick"/>
+    <circle cx="30" cy="230" r="5" class="circuit-node"/>
+    <line x1="30" y1="230" x2="10" y2="200" class="circuit"/>
+    <circle cx="10" cy="200" r="4" class="circuit-node"/>
+
+    <line x1="100" y1="400" x2="20" y2="400" class="circuit-thick"/>
+    <line x1="20" y1="400" x2="20" y2="350" class="circuit"/>
+    <circle cx="20" cy="350" r="4" class="circuit-node"/>
+
+    <line x1="110" y1="500" x2="30" y2="520" class="circuit-thick"/>
+    <line x1="30" y1="520" x2="30" y2="580" class="circuit"/>
+    <circle cx="30" cy="580" r="5" class="circuit-node"/>
+
+    <line x1="140" y1="350" x2="60" y2="350" class="circuit"/>
+    <line x1="60" y1="350" x2="60" y2="310" class="circuit"/>
+    <circle cx="60" cy="310" r="3" class="circuit-node"/>
+
+    <line x1="130" y1="450" x2="50" y2="470" class="circuit"/>
+    <circle cx="50" cy="470" r="4" class="circuit-node"/>
+    <line x1="50" y1="470" x2="10" y2="470" class="circuit"/>
+    <circle cx="10" cy="470" r="3" class="circuit-node"/>
+
+    <!-- Right side circuits -->
+    <line x1="680" y1="300" x2="770" y2="280" class="circuit-thick"/>
+    <line x1="770" y1="280" x2="770" y2="230" class="circuit-thick"/>
+    <circle cx="770" cy="230" r="5" class="circuit-node"/>
+    <line x1="770" y1="230" x2="790" y2="200" class="circuit"/>
+    <circle cx="790" cy="200" r="4" class="circuit-node"/>
+
+    <line x1="700" y1="400" x2="780" y2="400" class="circuit-thick"/>
+    <line x1="780" y1="400" x2="780" y2="350" class="circuit"/>
+    <circle cx="780" cy="350" r="4" class="circuit-node"/>
+
+    <line x1="690" y1="500" x2="770" y2="520" class="circuit-thick"/>
+    <line x1="770" y1="520" x2="770" y2="580" class="circuit"/>
+    <circle cx="770" cy="580" r="5" class="circuit-node"/>
+
+    <line x1="660" y1="350" x2="740" y2="350" class="circuit"/>
+    <line x1="740" y1="350" x2="740" y2="310" class="circuit"/>
+    <circle cx="740" cy="310" r="3" class="circuit-node"/>
+
+    <line x1="670" y1="450" x2="750" y2="470" class="circuit"/>
+    <circle cx="750" cy="470" r="4" class="circuit-node"/>
+    <line x1="750" y1="470" x2="790" y2="470" class="circuit"/>
+    <circle cx="790" cy="470" r="3" class="circuit-node"/>
+
+    <!-- Top circuits -->
+    <line x1="350" y1="120" x2="330" y2="40" class="circuit-thick"/>
+    <circle cx="330" cy="40" r="5" class="circuit-node"/>
+    <line x1="330" y1="40" x2="300" y2="20" class="circuit"/>
+    <circle cx="300" cy="20" r="4" class="circuit-node"/>
+
+    <line x1="450" y1="120" x2="470" y2="40" class="circuit-thick"/>
+    <circle cx="470" cy="40" r="5" class="circuit-node"/>
+    <line x1="470" y1="40" x2="500" y2="20" class="circuit"/>
+    <circle cx="500" cy="20" r="4" class="circuit-node"/>
+
+    <line x1="400" y1="110" x2="400" y2="30" class="circuit"/>
+    <circle cx="400" cy="30" r="4" class="circuit-node"/>
+
+    <line x1="280" y1="140" x2="240" y2="50" class="circuit"/>
+    <circle cx="240" cy="50" r="3" class="circuit-node"/>
+
+    <line x1="520" y1="140" x2="560" y2="50" class="circuit"/>
+    <circle cx="560" cy="50" r="3" class="circuit-node"/>
+
+    <!-- Bottom circuits -->
+    <line x1="350" y1="850" x2="330" y2="930" class="circuit"/>
+    <circle cx="330" cy="930" r="4" class="circuit-node"/>
+
+    <line x1="450" y1="850" x2="470" y2="930" class="circuit"/>
+    <circle cx="470" cy="930" r="4" class="circuit-node"/>
+
+    <!-- TEXT: aibd.ai -->
+    <text x="400" y="490" class="text-main" font-size="95" text-anchor="middle" letter-spacing="2">aibd.ai</text>
+
+  </g>
+</svg>
